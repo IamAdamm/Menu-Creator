@@ -1,0 +1,32 @@
+//Objective with info of special
+const menu = {
+  _meal: '',
+  _price: 0,
+  set meal(mealToCheck){
+    if(typeof mealToCheck === ""){
+      this._meal = mealToCheck
+      return this._price
+    }
+  },
+  set price(priceToCheck){
+    if(typeof priceToCheck === 'number'){
+      this._price = priceToCheck
+      return this._price
+    }
+  },
+  get todaysSpecial(){
+    if(this._meal && this._price){
+      return `Todays Special is ${this._meal} for ${this._price}.`
+
+    }else{
+      return 'Meal or price was not set correctly.'
+    }
+  }
+  }
+
+//setting the special. Here you can write the meal and it's cost.
+menu._meal = 'Noodles'
+menu._price = 10 + '$'
+
+//logging the special
+console.log(menu.todaysSpecial)
